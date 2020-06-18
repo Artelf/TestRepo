@@ -7,9 +7,9 @@ jobs:
   mergeIntoDevelop:
     runs-on: ubuntu-latest
     steps:
-	- run: |
-	    git fetch --all
-	    git checkout develop origin/develop
-            git reset --hard origin/develop
-	    git pull origin master
-            git push origin develop
+	run: |
+	git fetch --all
+	git checkout develop origin/develop
+	git reset --hard origin/develop
+	git pull origin master
+	git push origin develop
