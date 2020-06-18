@@ -15,5 +15,5 @@ jobs:
           target_branch: 'develop'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - uses: actions/merge_to_m1
+      - uses: TestRepo/merge_to_m1@master
 
