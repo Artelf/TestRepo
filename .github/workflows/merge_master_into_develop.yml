@@ -18,9 +18,12 @@ jobs:
   mergeDevelopIntoM1:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@develop
-      - name: Merge to m1 branch
-        uses: devmasx/merge-branch@v1.1.0
+      - uses: actions/checkout@v2
+        with:
+          ref:  develop
+      - name: Checkout to develop
+      - uses: devmasx/merge-branch@v1.1.0
+      - name: Merge to m1
         with:
           type: now
           target_branch: 'm1'
