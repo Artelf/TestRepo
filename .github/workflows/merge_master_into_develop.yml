@@ -15,17 +15,5 @@ jobs:
           target_branch: 'develop'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  mergeDevelopIntoM1:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref:  develop
-      - name: Merge to m1
-        uses: devmasx/merge-branch@v1.1.0
-        with:
-          type: now
-          target_branch: 'm1'
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - uses: actions/merge_to_m1
 
