@@ -7,14 +7,12 @@ jobs:
   mergeIntoDevelop:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
+      - name: Merge to develop branch
+        uses: devmasx/merge-branch@v1.1.0
         with:
-          ref: develop
-      - name: merge master into develop
-        run: |
-          git fetch --all
-          git checkout develop
-          git reset --hard origin/develop
-          git pull origin master
-          git push
+          type: now
+          target_branch: 'develop'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
