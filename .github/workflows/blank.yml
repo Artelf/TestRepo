@@ -4,11 +4,11 @@ on:
     branches:
       - develop
 jobs:
-  mergeIntoDevelop:
+ merge-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@develop
-      - name: Merge to develop branch
+      - uses: actions/checkout@master
+      - name: Merge to uat branch
         uses: devmasx/merge-branch@v1.1.0
         with:
           type: now
