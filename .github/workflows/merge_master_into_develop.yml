@@ -15,5 +15,7 @@ jobs:
           ref: develop
       - name: merge master into develop
         run: |
-          git fetch origin master:master
-          git merge master
+          git fetch --all
+          git checkout develop
+          git pull origin master
+
