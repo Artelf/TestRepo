@@ -16,5 +16,5 @@ jobs:
           git checkout develop
           git reset --hard origin develop
           git pull origin master
-          git push
+          git push origin develop 
 
