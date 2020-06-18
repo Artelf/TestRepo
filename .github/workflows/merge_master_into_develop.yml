@@ -7,8 +7,8 @@ jobs:
   mergeIntoDevelop:
     runs-on: ubuntu-latest
     steps:
--name: Merge into develop
-	run: |
+    	- name: Merge into develop
+      	run: |
 	git fetch --all
 	git checkout develop origin/develop
 	git reset --hard origin/develop
