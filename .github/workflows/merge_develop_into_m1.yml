@@ -1,0 +1,15 @@
+name: Merge develop into m1
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  mergeIntoDevelop:
+    runs-on: ubuntu-latest
+    steps:
+	- run: |
+	    git fetch --all
+	    git checkout m1 origin/m1
+            git reset --hard origin/m1
+	    git pull origin develop
+            git push origin m1
