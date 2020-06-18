@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches: 
-      - master
 jobs:
   mergeIntoDevelop:
     runs-on: ubuntu-latest
@@ -17,5 +14,7 @@ jobs:
         run: |
           git fetch --all
           git checkout develop
+          git reset --hard origin develop
           git pull origin master
+          git push
 
