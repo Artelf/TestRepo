@@ -1,0 +1,19 @@
+name: Create production promotion pull request
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: 
+      - master
+jobs:
+  mergeIntoDevelop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: develop
+      - name: merge master into develop
+        run: |
+          git fetch origin master:master
+          git merge master
